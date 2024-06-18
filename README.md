@@ -2,6 +2,8 @@
 Commands to chroot a arch system encrypted with LUKS.
 First boot from a live usb. Then connect to the internet and run the following commands
 
+the use of pacman is recommended!!
+
 ## Commands
 All
 ```bash
@@ -9,9 +11,7 @@ sudo cryptsetup open /dev/nvme0n1p2 crypto_LUKS
 sudo mount /dev/mapper/crypto_LUKS /mnt
 sudo mount /dev/nvme0n1p1 /mnt/efi
 sudo arch-chroot /mnt
-yay
-yay -Syu linux-headers
-yay -Syu linux
+sudo pacman -Syu linux-headers linux
 ```
 
 Display drives
@@ -37,7 +37,5 @@ sudo arch-chroot /mnt
 
 update and reinstall linux and headers
 ```bash
-yay
-yay -Syu linux-headers
-yay -Syu linux
+sudo pacman -Syu linux-headers linux
 ```
